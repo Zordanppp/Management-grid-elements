@@ -25,14 +25,14 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ## Features
 
- [X] Initial Screen
- [X] Responsive Layout List
- [X] Search Icon by Text
- [X] Favorite Icon
- [X] Delete Icon Card
- [X] Show On/Off Deleteds Icon
- [ ] Show On/Off Favoriteds Icon
- [ ] Icon Details
+- [X] Initial Screen
+- [X] Responsive Layout List
+- [X] Search Icon by Text
+- [X] Favorite Icon
+- [X] Delete Icon Card
+- [X] Show On/Off Deleteds Icon
+- [ ] Show On/Off Favoriteds Icon
+- [ ] Icon Details
 
 
 ### Initial Screen
