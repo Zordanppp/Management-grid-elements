@@ -22,7 +22,9 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 
 ### Initial Screen
-https://www.notion.so/Icons-application-list-1fc4dd34dc524be593a94ee07a9bfebd#04861c4c3c0342afb8c4c40affcacd2b
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063d898-144f-4f01-bcec-5248380dcc94/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063d898-144f-4f01-bcec-5248380dcc94/Untitled.png)
 
 ### Search Result
-https://www.notion.so/Icons-application-list-1fc4dd34dc524be593a94ee07a9bfebd#191b57deca334af39fc73093446901e9
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43dcd31b-5763-429e-8279-f9a49aa6b008/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43dcd31b-5763-429e-8279-f9a49aa6b008/Untitled.png)
