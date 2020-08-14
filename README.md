@@ -25,22 +25,22 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ### Initial Screen
 
-![image](https://user-images.githubusercontent.com/20348582/90289421-d4a84d80-de49-11ea-9de2-ba5289f009ed.png)
+![image](https://user-images.githubusercontent.com/20348582/90295673-97e35300-de57-11ea-8233-3b81489b19f7.png)
 
 
 ### Search Result
 
-![image](https://user-images.githubusercontent.com/20348582/90289470-f0abef00-de49-11ea-8a81-69f0fb55359d.png)
+![image](https://user-images.githubusercontent.com/20348582/90295833-fb6d8080-de57-11ea-9dc7-74f19d60885c.png)
 
 
 ### Responsive List
 
 Small Layout
-![image](https://user-images.githubusercontent.com/20348582/90289497-fd304780-de49-11ea-9477-fc7a0c3a76d9.png)
+![image](https://user-images.githubusercontent.com/20348582/90295693-9fa2f780-de57-11ea-8ea0-d15118f0efa6.png)
 
 ### Delete Icon Card
 
-Not done yet.
+![image](https://user-images.githubusercontent.com/20348582/90295927-2fe13c80-de58-11ea-9210-4a4e8a768363.png)
 
 ### Icon Details
 
@@ -48,5 +48,7 @@ Not done yet.
 
 ### Favorite Icon
 
-![image](https://user-images.githubusercontent.com/20348582/90289312-9c087400-de49-11ea-9e80-4c5a68fb9bb2.png)
+![image](https://user-images.githubusercontent.com/20348582/90295673-97e35300-de57-11ea-8233-3b81489b19f7.png)
+
+
 
