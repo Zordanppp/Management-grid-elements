@@ -1,6 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Project in ReactJS and TypeScript
+## Project in ReactJS and TypeScript with study purpose
+
+### Objectives:
+#### improving knowledge about:
+- Grid layout
+- Flex layout
+- State management
+- Form management
+- Search by text feature
 
 This project is serving me as a study to improve the state management skills and elements on screen.
 
