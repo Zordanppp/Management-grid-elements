@@ -19,3 +19,12 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 2. Eslint
 3. Prettier
 4. Fast Refresh
+
+
+### Initial Screen
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063d898-144f-4f01-bcec-5248380dcc94/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063d898-144f-4f01-bcec-5248380dcc94/Untitled.png)
+
+### Search Result
+
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43dcd31b-5763-429e-8279-f9a49aa6b008/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43dcd31b-5763-429e-8279-f9a49aa6b008/Untitled.png)
