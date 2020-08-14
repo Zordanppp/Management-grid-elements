@@ -23,8 +23,6 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ## Features
 
-## Features
-
 - [X] Initial Screen
 - [X] Responsive Layout List
 - [X] Search Icon by Text
@@ -34,6 +32,7 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 - [ ] Show On/Off Favoriteds Icon
 - [ ] Icon Details
 
+## Layouts 
 
 ### Initial Screen
 
@@ -50,17 +49,9 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 Small Layout
 ![image](https://user-images.githubusercontent.com/20348582/90295693-9fa2f780-de57-11ea-8ea0-d15118f0efa6.png)
 
-### Delete Icon Card
-
-![image](https://user-images.githubusercontent.com/20348582/90295927-2fe13c80-de58-11ea-9210-4a4e8a768363.png)
 
 ### Icon Details
 
 Not done yet.
-
-### Favorite Icon
-
-![image](https://user-images.githubusercontent.com/20348582/90295673-97e35300-de57-11ea-8233-3b81489b19f7.png)
-
 
 
