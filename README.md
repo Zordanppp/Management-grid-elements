@@ -25,11 +25,13 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ### Initial Screen
 
-![image](https://user-images.githubusercontent.com/20348582/90281042-eaae1200-de39-11ea-8322-6cfd9eee9a12.png)
+![image](https://user-images.githubusercontent.com/20348582/90283207-c48a7100-de3d-11ea-9cde-4deb193b4760.png)
+
 
 ### Search Result
 
-![image](https://user-images.githubusercontent.com/20348582/90281133-192bed00-de3a-11ea-8c35-8bae00170782.png)
+![image](https://user-images.githubusercontent.com/20348582/90283931-17b0f380-de3f-11ea-868e-22ef6f45ca93.png)
+
 
 ### Responsive List
 
