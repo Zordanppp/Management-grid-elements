@@ -55,11 +55,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     alignItems: 'center',
   },
 
-  paperIconFooter: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-
   paperIcon: {
     display: 'flex',
     justifyContent: 'center',
@@ -74,13 +69,34 @@ export const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(2),
   },
 
-  nextCardButton: {
+  paperIconFooter: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+  },
+
+  footerButton: {
     color: '#FFF',
-    marginRight: theme.spacing(1),
+    width: 32,
+    height: 32,
+    borderRadius: 8,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: theme.spacing(1),
     marginTop: theme.spacing(1),
+  },
+
+  unfavoriteButton: {
     background: theme.palette.secondary.light,
     '&:hover': {
       background: theme.palette.secondary.main,
+    },
+  },
+
+  favoriteButton: {
+    background: theme.palette.success.main,
+    '&:hover': {
+      background: theme.palette.success.dark,
     },
   },
 }));

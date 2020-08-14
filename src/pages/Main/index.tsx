@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useCallback } from 'react';
 
+import clsx from 'clsx';
 import { useForm, Controller } from 'react-hook-form';
 
 import Paper from '@material-ui/core/Paper';
@@ -22,6 +23,8 @@ function App() {
   const classes = useStyles();
   const methods = useForm();
 
+  const [favorites, setFavorites] = useState<AvailableIcons[]>([]);
+
   const keys = useMemo(
     () => Object.keys(svgIcons).map((iconName) => iconName) as AvailableIcons[],
     [],
@@ -41,6 +44,22 @@ function App() {
     setIconsToShow(newIconsToShow);
   }
 
+  const handleFavorite = useCallback(
+    (iconName: AvailableIcons) => {
+      const index = favorites.findIndex(
+        (favoriteIconName) => favoriteIconName === iconName,
+      );
+      const newFavorites = [...favorites];
+      if (index === -1) {
+        newFavorites.push(iconName);
+      } else {
+        newFavorites.splice(index, 1);
+      }
+      setFavorites(newFavorites);
+    },
+    [favorites],
+  );
+
   const PaperIconHeader = useMemo(
     () => (
       <div className={classes.paperIconHeader}>
@@ -59,17 +78,34 @@ function App() {
     [classes.paperIconHeader],
   );
 
-  const PaperIconFooter = useMemo(
-    () => (
+  const PaperIconFooter = useCallback(
+    (iconName: AvailableIcons) => (
       <div className={classes.paperIconFooter}>
-        <Tooltip title="Options">
-          <Button className={classes.nextCardButton}>
-            <Icon name="arrowRight" />
-          </Button>
-        </Tooltip>
+        {favorites.includes(iconName) ? (
+          <Tooltip title="Unfavorite">
+            <div className={clsx(classes.favoriteButton, classes.footerButton)}>
+              <Icon name="heartOff" onClick={() => handleFavorite(iconName)} />
+            </div>
+          </Tooltip>
+        ) : (
+          <Tooltip title="Favorite">
+            <div
+              className={clsx(classes.unfavoriteButton, classes.footerButton)}
+            >
+              <Icon name="heart" onClick={() => handleFavorite(iconName)} />
+            </div>
+          </Tooltip>
+        )}
       </div>
     ),
-    [classes.paperIconFooter, classes.nextCardButton],
+    [
+      classes.paperIconFooter,
+      classes.footerButton,
+      classes.favoriteButton,
+      classes.unfavoriteButton,
+      handleFavorite,
+      favorites,
+    ],
   );
 
   return (
@@ -128,7 +164,7 @@ function App() {
                   className={classes.icon}
                 />
               </div>
-              {PaperIconFooter}
+              {PaperIconFooter(iconName)}
             </Grid>
           </Paper>
         ))}
