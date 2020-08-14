@@ -1,19 +1,19 @@
 import React, { useMemo, useState, useCallback } from 'react';
 
-import clsx from 'clsx';
 import { useForm, Controller } from 'react-hook-form';
 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import Tooltip from '@material-ui/core/Tooltip';
 import TextField from '@material-ui/core/TextField';
-import IconButton from '@material-ui/core/IconButton';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Checkbox from '@material-ui/core/Checkbox';
+
+import Icon from 'components/Icon';
+import Card from 'components/Card';
 
 import svgIcons from 'components/Icon/svgIconPaths';
-import Icon from 'components/Icon';
 
 import { AvailableIcons } from 'components/Icon/types';
 
@@ -24,6 +24,8 @@ function App() {
   const methods = useForm();
 
   const [favorites, setFavorites] = useState<AvailableIcons[]>([]);
+  const [deleteds, setDeleteds] = useState<AvailableIcons[]>([]);
+  const [showDeleteds, setShowDeleteds] = useState(true);
 
   const keys = useMemo(
     () => Object.keys(svgIcons).map((iconName) => iconName) as AvailableIcons[],
@@ -32,91 +34,31 @@ function App() {
 
   const [iconsToShow, setIconsToShow] = useState<AvailableIcons[]>(keys);
 
-  function handleSearchIcon(data: Record<string, string>): void {
-    if (data['searchicon'] === '') {
-      setIconsToShow(keys);
-    }
-
-    const newIconsToShow = keys.filter((iconName) =>
-      iconName.includes(data['searchicon']),
-    );
-
-    setIconsToShow(newIconsToShow);
-  }
-
-  const handleFavorite = useCallback(
-    (iconName: AvailableIcons) => {
-      const index = favorites.findIndex(
-        (favoriteIconName) => favoriteIconName === iconName,
-      );
-      const newFavorites = [...favorites];
-      if (index === -1) {
-        newFavorites.push(iconName);
-      } else {
-        newFavorites.splice(index, 1);
+  const handleSearchIcon = useCallback(
+    (data: Record<string, string>) => {
+      if (data['searchicon'] === '') {
+        setIconsToShow(keys);
       }
-      setFavorites(newFavorites);
+
+      const newIconsToShow = keys.filter((iconName) =>
+        iconName.includes(data['searchicon']),
+      );
+
+      setIconsToShow(newIconsToShow);
     },
-    [favorites],
+    [keys],
   );
 
-  const PaperIconHeader = useMemo(
+  const Filters = useMemo(
     () => (
-      <div className={classes.paperIconHeader}>
-        <Tooltip title="Options">
-          <IconButton>
-            <Icon name="chevronDown" />
-          </IconButton>
-        </Tooltip>
-        <Tooltip title="Delete">
-          <IconButton>
-            <Icon name="close" />
-          </IconButton>
-        </Tooltip>
-      </div>
-    ),
-    [classes.paperIconHeader],
-  );
-
-  const PaperIconFooter = useCallback(
-    (iconName: AvailableIcons) => (
-      <div className={classes.paperIconFooter}>
-        {favorites.includes(iconName) ? (
-          <Tooltip title="Unfavorite">
-            <div className={clsx(classes.favoriteButton, classes.footerButton)}>
-              <Icon name="heartOff" onClick={() => handleFavorite(iconName)} />
-            </div>
-          </Tooltip>
-        ) : (
-          <Tooltip title="Favorite">
-            <div
-              className={clsx(classes.unfavoriteButton, classes.footerButton)}
-            >
-              <Icon name="heart" onClick={() => handleFavorite(iconName)} />
-            </div>
-          </Tooltip>
-        )}
-      </div>
-    ),
-    [
-      classes.paperIconFooter,
-      classes.footerButton,
-      classes.favoriteButton,
-      classes.unfavoriteButton,
-      handleFavorite,
-      favorites,
-    ],
-  );
-
-  return (
-    <Paper elevation={2} className={classes.container}>
-      <Grid container justify="flex-start">
-        <Typography variant="h2" className={classes.title}>
-          Icons application list
-        </Typography>
-      </Grid>
-
-      <Grid container justify="flex-end">
+      <Grid container justify="space-between" alignItems="center">
+        <Grid className={classes.checkboxShowDeleteds}>
+          <Checkbox
+            checked={showDeleteds}
+            onClick={() => setShowDeleteds(!showDeleteds)}
+          />
+          <Typography>Show deleteds icons</Typography>
+        </Grid>
         <form
           className={classes.form}
           onSubmit={methods.handleSubmit(handleSearchIcon)}
@@ -150,24 +92,50 @@ function App() {
           </Grid>
         </form>
       </Grid>
+    ),
+    [
+      classes.searchButton,
+      classes.searchField,
+      classes.form,
+      classes.checkboxShowDeleteds,
+      handleSearchIcon,
+      methods,
+      showDeleteds,
+    ],
+  );
+
+  return (
+    <Paper elevation={2} className={classes.container}>
+      <Grid container justify="flex-start">
+        <Typography variant="h2" className={classes.title}>
+          Icons application list
+        </Typography>
+      </Grid>
+
+      {Filters}
       <Grid container className={classes.iconsBox}>
-        {iconsToShow.map((iconName) => (
-          <Paper key={iconName} className={classes.paperIcon} elevation={4}>
-            <Grid item>
-              {PaperIconHeader}
-              <div className={classes.paperIconContent}>
-                <Typography>{iconName}</Typography>
-                <Icon
-                  name={iconName}
-                  color="primary"
-                  fontSize="large"
-                  className={classes.icon}
-                />
-              </div>
-              {PaperIconFooter(iconName)}
-            </Grid>
-          </Paper>
-        ))}
+        {!showDeleteds
+          ? iconsToShow.map(
+              (iconName) =>
+                !deleteds.includes(iconName) && (
+                  <Card
+                    iconName={iconName}
+                    deleteds={deleteds}
+                    setDeleteds={setDeleteds}
+                    setFavorites={setFavorites}
+                    favorites={favorites}
+                  />
+                ),
+            )
+          : iconsToShow.map((iconName) => (
+              <Card
+                iconName={iconName}
+                deleteds={deleteds}
+                setDeleteds={setDeleteds}
+                setFavorites={setFavorites}
+                favorites={favorites}
+              />
+            ))}
       </Grid>
     </Paper>
   );
