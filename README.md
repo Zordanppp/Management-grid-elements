@@ -20,6 +20,7 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 3. Prettier
 4. Fast Refresh
 
+## Features
 
 ### Initial Screen
 
@@ -29,3 +30,11 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ![image](https://user-images.githubusercontent.com/20348582/90281133-192bed00-de3a-11ea-8c35-8bae00170782.png)
 
+### Delete Icon Card
+Not done yet.
+
+### Icon Details
+Not done yet.
+
+### Favorite Icon
+Not done yet.
