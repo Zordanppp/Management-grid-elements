@@ -23,8 +23,9 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ### Initial Screen
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063d898-144f-4f01-bcec-5248380dcc94/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e063d898-144f-4f01-bcec-5248380dcc94/Untitled.png)
+![image](https://user-images.githubusercontent.com/20348582/90281042-eaae1200-de39-11ea-8322-6cfd9eee9a12.png)
 
 ### Search Result
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43dcd31b-5763-429e-8279-f9a49aa6b008/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/43dcd31b-5763-429e-8279-f9a49aa6b008/Untitled.png)
+![image](https://user-images.githubusercontent.com/20348582/90281133-192bed00-de3a-11ea-8c35-8bae00170782.png)
+
