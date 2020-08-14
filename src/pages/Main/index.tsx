@@ -25,7 +25,9 @@ function App() {
 
   const [favorites, setFavorites] = useState<AvailableIcons[]>([]);
   const [deleteds, setDeleteds] = useState<AvailableIcons[]>([]);
+
   const [showDeleteds, setShowDeleteds] = useState(true);
+  const [showFavoriteds, setShowFavoriteds] = useState(true);
 
   const keys = useMemo(
     () => Object.keys(svgIcons).map((iconName) => iconName) as AvailableIcons[],
@@ -58,6 +60,13 @@ function App() {
             onClick={() => setShowDeleteds(!showDeleteds)}
           />
           <Typography>Show deleteds icons</Typography>
+        </Grid>
+        <Grid className={classes.checkboxShowDeleteds}>
+          <Checkbox
+            checked={showFavoriteds}
+            onClick={() => setShowFavoriteds(!showFavoriteds)}
+          />
+          <Typography>Show favoriteds icons</Typography>
         </Grid>
         <form
           className={classes.form}
@@ -101,6 +110,7 @@ function App() {
       handleSearchIcon,
       methods,
       showDeleteds,
+      showFavoriteds,
     ],
   );
 
@@ -114,9 +124,20 @@ function App() {
 
       {Filters}
       <Grid container className={classes.iconsBox}>
+        {showFavoriteds &&
+          favorites.map((iconName) => (
+            <Card
+              iconName={iconName}
+              deleteds={deleteds}
+              setDeleteds={setDeleteds}
+              setFavorites={setFavorites}
+              favorites={favorites}
+            />
+          ))}
         {!showDeleteds
           ? iconsToShow.map(
               (iconName) =>
+                !favorites.includes(iconName) &&
                 !deleteds.includes(iconName) && (
                   <Card
                     iconName={iconName}
@@ -127,15 +148,18 @@ function App() {
                   />
                 ),
             )
-          : iconsToShow.map((iconName) => (
-              <Card
-                iconName={iconName}
-                deleteds={deleteds}
-                setDeleteds={setDeleteds}
-                setFavorites={setFavorites}
-                favorites={favorites}
-              />
-            ))}
+          : iconsToShow.map(
+              (iconName) =>
+                !favorites.includes(iconName) && (
+                  <Card
+                    iconName={iconName}
+                    deleteds={deleteds}
+                    setDeleteds={setDeleteds}
+                    setFavorites={setFavorites}
+                    favorites={favorites}
+                  />
+                ),
+            )}
       </Grid>
     </Paper>
   );
