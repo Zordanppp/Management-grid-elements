@@ -16,6 +16,10 @@ export const useStyles = makeStyles((theme: Theme) => ({
     margin: theme.spacing(0.5),
     width: 200,
     height: 180,
+    transition: '0.2s',
+    '&:hover': {
+      backgroundColor: theme.palette.grey[300],
+    },
   },
 
   icon: {
