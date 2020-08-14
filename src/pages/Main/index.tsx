@@ -74,11 +74,13 @@ function App() {
 
   return (
     <Paper elevation={2} className={classes.container}>
-      <Grid container justify="space-between" alignItems="center">
-        <Typography variant="h3" className={classes.title}>
+      <Grid container justify="flex-start">
+        <Typography variant="h2" className={classes.title}>
           Icons application list
         </Typography>
+      </Grid>
 
+      <Grid container justify="flex-end">
         <form
           className={classes.form}
           onSubmit={methods.handleSubmit(handleSearchIcon)}

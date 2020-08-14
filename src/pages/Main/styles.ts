@@ -14,13 +14,14 @@ export const useStyles = makeStyles((theme: Theme) => ({
   title: {
     margin: 16,
     paddingLeft: 16,
+    height: 60,
     color: theme.palette.primary.main,
   },
 
   form: {
-    width: 450,
+    width: 500,
+    height: 60,
     marginRight: theme.spacing(10.5),
-    marginTop: theme.spacing(2),
   },
 
   searchField: {
@@ -44,7 +45,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    // border: '1px dashed red',
     width: 200,
   },
 

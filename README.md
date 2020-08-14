@@ -1,8 +1,9 @@
-
 ## Project in ReactJS and TypeScript with study purpose
 
 ### Objectives:
+
 #### improving knowledge about:
+
 - Grid layout
 - Flex layout
 - State management
@@ -30,11 +31,19 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ![image](https://user-images.githubusercontent.com/20348582/90281133-192bed00-de3a-11ea-8c35-8bae00170782.png)
 
+### Responsive List
+
+Small Layout
+![image](https://user-images.githubusercontent.com/20348582/90283315-01eefe80-de3e-11ea-8d63-62b1de8456c2.png)
+
 ### Delete Icon Card
+
 Not done yet.
 
 ### Icon Details
+
 Not done yet.
 
 ### Favorite Icon
+
 Not done yet.
