@@ -23,6 +23,18 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ## Features
 
+## Features
+
+- [] Initial Screen
+- [] Responsive Layout List
+- [] Search Icon by Text
+- [] Favorite Icon
+- [] Delete Icon Card
+- [] Show On/Off Deleteds Icon
+- [] Show On/Off Favoriteds Icon
+- [] Icon Details
+
+
 ### Initial Screen
 
 ![image](https://user-images.githubusercontent.com/20348582/90295673-97e35300-de57-11ea-8233-3b81489b19f7.png)
