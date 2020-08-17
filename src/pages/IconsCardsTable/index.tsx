@@ -11,6 +11,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import Checkbox from '@material-ui/core/Checkbox';
 
 import Icon from 'components/Icon';
+import Header from 'components/Header';
 import Card from 'components/Card';
 
 import svgIcons from 'components/Icon/svgIconPaths';
@@ -19,7 +20,7 @@ import { AvailableIcons } from 'components/Icon/types';
 
 import { useStyles } from './styles';
 
-function App() {
+const IconsCardsTable: React.FC = () => {
   const classes = useStyles();
   const methods = useForm();
 
@@ -53,53 +54,66 @@ function App() {
 
   const Filters = useMemo(
     () => (
-      <Grid container justify="space-between" alignItems="center">
-        <Grid className={classes.checkboxShowDeleteds}>
-          <Checkbox
-            checked={showDeleteds}
-            onClick={() => setShowDeleteds(!showDeleteds)}
-          />
-          <Typography>Show deleteds icons</Typography>
-        </Grid>
-        <Grid className={classes.checkboxShowDeleteds}>
-          <Checkbox
-            checked={showFavoriteds}
-            onClick={() => setShowFavoriteds(!showFavoriteds)}
-          />
-          <Typography>Show favoriteds icons</Typography>
-        </Grid>
-        <form
-          className={classes.form}
-          onSubmit={methods.handleSubmit(handleSearchIcon)}
-        >
-          <Grid container justify="space-between">
-            <Controller
-              as={TextField}
-              control={methods.control}
-              defaultValue=""
-              label="Icon name"
-              variant="filled"
-              name="searchicon"
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <Icon name="search" />
-                  </InputAdornment>
-                ),
-              }}
-              className={classes.searchField}
+      <Grid
+        container
+        item
+        xs={12}
+        sm={12}
+        justify="space-between"
+        alignItems="center"
+        className={classes.filters}
+      >
+        <Grid item className={classes.checkboxes} xs={12} sm={6}>
+          <Grid className={classes.checkboxShowDeleteds}>
+            <Checkbox
+              checked={showDeleteds}
+              onClick={() => setShowDeleteds(!showDeleteds)}
             />
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              startIcon={<Icon name="search" />}
-              className={classes.searchButton}
-            >
-              Search
-            </Button>
+            <Typography>Show deleteds icons</Typography>
           </Grid>
-        </form>
+
+          <Grid className={classes.checkboxShowDeleteds}>
+            <Checkbox
+              checked={showFavoriteds}
+              onClick={() => setShowFavoriteds(!showFavoriteds)}
+            />
+            <Typography>Show favoriteds icons</Typography>
+          </Grid>
+        </Grid>
+        <Grid item className={classes.search} xs={12} sm={6}>
+          <form
+            className={classes.form}
+            onSubmit={methods.handleSubmit(handleSearchIcon)}
+          >
+            <Grid container justify="space-between">
+              <Controller
+                as={TextField}
+                control={methods.control}
+                defaultValue=""
+                label="Icon name"
+                variant="filled"
+                name="searchicon"
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <Icon name="search" />
+                    </InputAdornment>
+                  ),
+                }}
+                className={classes.searchField}
+              />
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                startIcon={<Icon name="search" />}
+                className={classes.searchButton}
+              >
+                Search
+              </Button>
+            </Grid>
+          </form>
+        </Grid>
       </Grid>
     ),
     [
@@ -107,6 +121,9 @@ function App() {
       classes.searchField,
       classes.form,
       classes.checkboxShowDeleteds,
+      classes.filters,
+      classes.checkboxes,
+      classes.search,
       handleSearchIcon,
       methods,
       showDeleteds,
@@ -116,17 +133,13 @@ function App() {
 
   return (
     <Paper elevation={2} className={classes.container}>
-      <Grid container justify="flex-start">
-        <Typography variant="h2" className={classes.title}>
-          Icons application list
-        </Typography>
-      </Grid>
-
+      <Header title="Icons table" />
       {Filters}
       <Grid container className={classes.iconsBox}>
         {showFavoriteds &&
           favorites.map((iconName) => (
             <Card
+              key={iconName}
               iconName={iconName}
               deleteds={deleteds}
               setDeleteds={setDeleteds}
@@ -140,6 +153,7 @@ function App() {
                 !favorites.includes(iconName) &&
                 !deleteds.includes(iconName) && (
                   <Card
+                    key={iconName}
                     iconName={iconName}
                     deleteds={deleteds}
                     setDeleteds={setDeleteds}
@@ -152,6 +166,7 @@ function App() {
               (iconName) =>
                 !favorites.includes(iconName) && (
                   <Card
+                    key={iconName}
                     iconName={iconName}
                     deleteds={deleteds}
                     setDeleteds={setDeleteds}
@@ -163,6 +178,6 @@ function App() {
       </Grid>
     </Paper>
   );
-}
+};
 
-export default App;
+export default IconsCardsTable;

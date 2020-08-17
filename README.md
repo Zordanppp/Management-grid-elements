@@ -33,24 +33,21 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ## Layouts
 
-### Initial Screen
+### Initial layout
 
-![image](https://user-images.githubusercontent.com/20348582/90400040-da7c7980-e069-11ea-9ff5-bd0fae2e8f13.png)
+![image](https://user-images.githubusercontent.com/20348582/90411563-f851da80-e079-11ea-8e25-376192184f1a.png)
 
-### Search Result
+### Search
 
-![image](https://user-images.githubusercontent.com/20348582/90400067-e6683b80-e069-11ea-9711-be451c217538.png)
+![image](https://user-images.githubusercontent.com/20348582/90411669-191a3000-e07a-11ea-9eff-a989157cf1f9.png)
 
-### Responsive List
+### Responsive list
 
-Small Layout
-![image](https://user-images.githubusercontent.com/20348582/90295693-9fa2f780-de57-11ea-8ea0-d15118f0efa6.png)
+![image](https://user-images.githubusercontent.com/20348582/90411893-672f3380-e07a-11ea-9f69-3520af70f1e2.png)
 
-### Favorites in the head list
+### Favoriteds
 
-![image](https://user-images.githubusercontent.com/20348582/90400118-faac3880-e069-11ea-9571-7adc655e84c2.png)
-
-![image](https://user-images.githubusercontent.com/20348582/90400100-f3852a80-e069-11ea-8fbc-0761e6c6e3aa.png)
+![image](https://user-images.githubusercontent.com/20348582/90411946-7a420380-e07a-11ea-9c7b-2eda8fba7630.png)
 
 ### Icon Details
 

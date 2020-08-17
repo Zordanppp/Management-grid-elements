@@ -1,16 +1,12 @@
 import React from 'react';
 
-import Main from './pages/Main';
+import IconsCardsTable from './pages/IconsCardsTable';
 
-import { useStyles } from './styles';
+// import { useStyles } from './styles';
 
-function App() {
-  const classes = useStyles();
-  return (
-    <div className={classes.container}>
-      <Main />
-    </div>
-  );
-}
+const App: React.FC = () => {
+  // const classes = useStyles();
+  return <IconsCardsTable />;
+};
 
 export default App;

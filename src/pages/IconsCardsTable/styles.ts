@@ -5,39 +5,52 @@ export const useStyles = makeStyles((theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    maxWidth: 1600,
-    height: 720,
-    padding: theme.spacing(1),
-    margin: theme.spacing(2),
-  },
-
-  title: {
-    margin: 16,
-    paddingLeft: 16,
-    height: 60,
-    color: theme.palette.primary.main,
+    paddingBottom: theme.spacing(1),
+    maxWidth: 1650,
+    minHeight: 720,
   },
 
   form: {
-    width: 500,
-    height: 60,
-    marginRight: theme.spacing(10.5),
+    width: '100%',
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(2),
+  },
+
+  filters: {
+    maxHeight: 100,
+    padding: theme.spacing(1),
+  },
+
+  checkboxes: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+  },
+
+  search: {
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
   },
 
   checkboxShowDeleteds: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    marginLeft: theme.spacing(7),
+    marginLeft: theme.spacing(5),
   },
 
   searchField: {
     flex: 1,
+    width: '100%',
   },
 
   searchButton: {
     marginLeft: theme.spacing(1),
-    height: 56,
+    width: 130,
+    height: 55,
   },
 
   iconsBox: {
@@ -45,6 +58,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     overflowY: 'auto',
+    paddingTop: theme.spacing(2),
     padding: theme.spacing(1),
   },
 }));
