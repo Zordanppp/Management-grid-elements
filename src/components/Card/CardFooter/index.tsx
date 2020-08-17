@@ -6,13 +6,9 @@ import { AvailableIcons } from 'components/Icon/types';
 import Tooltip from '@material-ui/core/Tooltip';
 import Icon from 'components/Icon';
 
-import { useStyles } from './styles';
+import { CardFooterProps } from '../types';
 
-interface CardFooterProps {
-  iconName: AvailableIcons;
-  favorites: AvailableIcons[];
-  setFavorites(favorites: AvailableIcons[]): void;
-}
+import { useStyles } from './styles';
 
 const CardFooter: React.FC<CardFooterProps> = ({
   iconName,

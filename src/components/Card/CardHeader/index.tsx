@@ -4,13 +4,9 @@ import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import Icon from 'components/Icon';
 
-import { useStyles } from './styles';
+import { CardHeaderProps } from '../types';
 
-interface CardHeaderProps {
-  iconName: AvailableIcons;
-  deleteds: AvailableIcons[];
-  setDeleteds(deleteds: AvailableIcons[]): void;
-}
+import { useStyles } from './styles';
 
 const CardHeader: React.FC<CardHeaderProps> = ({
   iconName,

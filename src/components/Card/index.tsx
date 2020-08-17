@@ -5,20 +5,12 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Icon from 'components/Icon';
 
-import { AvailableIcons } from 'components/Icon/types';
-
 import CardHeader from './CardHeader';
 import CardFooter from './CardFooter';
 
 import { useStyles } from './styles';
 
-interface CardProps {
-  iconName: AvailableIcons;
-  deleteds: AvailableIcons[];
-  favorites: AvailableIcons[];
-  setFavorites(favorites: AvailableIcons[]): void;
-  setDeleteds(deleteds: AvailableIcons[]): void;
-}
+import { CardProps } from './types';
 
 const Card: React.FC<CardProps> = ({
   iconName,
