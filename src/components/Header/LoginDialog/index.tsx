@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useMemo } from 'react';
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -40,6 +40,31 @@ const LoginDialog: React.FC<LoginDialogProps> = ({
     [onToggle, setName],
   );
 
+  const ButtonsRow = useMemo(
+    () => (
+      <Grid container item justify="flex-end">
+        <Button
+          type="button"
+          variant="contained"
+          color="secondary"
+          className={classes.loginButton}
+          onClick={onToggle}
+        >
+          Cancel
+        </Button>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          className={classes.loginButton}
+        >
+          Login
+        </Button>
+      </Grid>
+    ),
+    [classes.loginButton, onToggle],
+  );
+
   return (
     <Dialog open={isOpen} onClose={onToggle} maxWidth="md">
       <DialogTitle>Log in simulation</DialogTitle>
@@ -53,6 +78,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({
               <Controller
                 as={TextField}
                 control={methods.control}
+                required
                 defaultValue=""
                 label="name"
                 variant="outlined"
@@ -122,25 +148,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({
                 className={classes.formContent}
               />
             </Grid>
-            <Grid container item justify="flex-end">
-              <Button
-                type="button"
-                variant="contained"
-                color="secondary"
-                className={classes.loginButton}
-                onClick={onToggle}
-              >
-                Cancel
-              </Button>
-              <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                className={classes.loginButton}
-              >
-                Login
-              </Button>
-            </Grid>
+            {ButtonsRow}
           </Grid>
         </form>
       </DialogContent>

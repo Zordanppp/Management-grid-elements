@@ -1,6 +1,7 @@
 import { AvailableIcons } from 'components/Icon/types';
 
 export interface CardProps {
+  svg?: string;
   iconName: AvailableIcons;
   deleteds: AvailableIcons[];
   favorites: AvailableIcons[];

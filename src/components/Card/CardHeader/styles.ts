@@ -4,7 +4,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
   paperIconHeader: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     width: 200,
   },
 }));

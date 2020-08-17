@@ -5,4 +5,5 @@ export type AvailableIcons = keyof typeof paths;
 
 export interface IconProps extends SvgIconProps {
   name: AvailableIcons;
+  svg?: string;
 }

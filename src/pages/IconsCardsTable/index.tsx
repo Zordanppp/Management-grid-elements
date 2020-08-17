@@ -11,23 +11,31 @@ import TextField from '@material-ui/core/TextField';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Checkbox from '@material-ui/core/Checkbox';
 
+import useDisclosure from 'hooks/useDisclosure';
+
 import Icon from 'components/Icon';
+
 import Header from 'components/Header';
 import Card from 'components/Card';
 
+import NewIconDialog from './NewIconDialog';
+
 import svgIcons from 'components/Icon/svgIconPaths';
 
-import { AvailableIcons } from 'components/Icon/types';
+import { AvailableIcons, IconProps } from 'components/Icon/types';
 
 import { useStyles } from './styles';
 
 const IconsCardsTable: React.FC = () => {
   const classes = useStyles();
   const methods = useForm();
+  const { isOpen, onToggle } = useDisclosure();
 
+  const [addeds, setAddeds] = useState<IconProps[]>([]);
   const [favorites, setFavorites] = useState<AvailableIcons[]>([]);
   const [deleteds, setDeleteds] = useState<AvailableIcons[]>([]);
 
+  const [showAddeds, setShowAddeds] = useState(true);
   const [showDeleteds, setShowDeleteds] = useState(true);
   const [showFavoriteds, setShowFavoriteds] = useState(true);
 
@@ -65,6 +73,14 @@ const IconsCardsTable: React.FC = () => {
         className={classes.filters}
       >
         <Grid item className={classes.checkboxes} xs={12} sm={6}>
+          <Grid className={classes.checkboxShowDeleteds}>
+            <Checkbox
+              checked={showAddeds}
+              onClick={() => setShowAddeds(!showAddeds)}
+            />
+            <Typography>Show my addeds icons</Typography>
+          </Grid>
+
           <Grid className={classes.checkboxShowDeleteds}>
             <Checkbox
               checked={showDeleteds}
@@ -118,6 +134,7 @@ const IconsCardsTable: React.FC = () => {
       </Grid>
     ),
     [
+      showAddeds,
       classes.searchButton,
       classes.searchField,
       classes.form,
@@ -133,54 +150,81 @@ const IconsCardsTable: React.FC = () => {
   );
 
   return (
-    <Paper elevation={2} className={classes.container}>
-      <Header title="Icons table" />
-      {FiltersRow}
-      <Grid container className={classes.iconsBox}>
-        {showFavoriteds &&
-          favorites.map((iconName) => (
-            <Card
-              key={iconName}
-              iconName={iconName}
-              deleteds={deleteds}
-              setDeleteds={setDeleteds}
-              setFavorites={setFavorites}
-              favorites={favorites}
-            />
-          ))}
-        {!showDeleteds
-          ? iconsToShow.map(
-              (iconName) =>
-                !favorites.includes(iconName) &&
-                !deleteds.includes(iconName) && (
-                  <Card
-                    key={iconName}
-                    iconName={iconName}
-                    deleteds={deleteds}
-                    setDeleteds={setDeleteds}
-                    setFavorites={setFavorites}
-                    favorites={favorites}
-                  />
-                ),
-            )
-          : iconsToShow.map(
-              (iconName) =>
-                !favorites.includes(iconName) && (
-                  <Card
-                    key={iconName}
-                    iconName={iconName}
-                    deleteds={deleteds}
-                    setDeleteds={setDeleteds}
-                    setFavorites={setFavorites}
-                    favorites={favorites}
-                  />
-                ),
-            )}
-      </Grid>
-      <Fab color="primary" aria-label="add" className={classes.fab}>
-        <Icon name="plus" />
-      </Fab>
-    </Paper>
+    <>
+      <Paper elevation={2} className={classes.container}>
+        <Header title="Icons table" />
+        {FiltersRow}
+        <Grid container className={classes.iconsBox}>
+          {showAddeds &&
+            addeds.map((addedIcon) => (
+              <Card
+                key={addedIcon.svg}
+                iconName={addedIcon.name}
+                svg={addedIcon.svg}
+                deleteds={deleteds}
+                setDeleteds={setDeleteds}
+                setFavorites={setFavorites}
+                favorites={favorites}
+              />
+            ))}
+
+          {showFavoriteds &&
+            favorites.map((iconName) => (
+              <Card
+                key={iconName}
+                iconName={iconName}
+                deleteds={deleteds}
+                setDeleteds={setDeleteds}
+                setFavorites={setFavorites}
+                favorites={favorites}
+              />
+            ))}
+          {!showDeleteds
+            ? iconsToShow.map(
+                (iconName) =>
+                  !favorites.includes(iconName) &&
+                  !deleteds.includes(iconName) && (
+                    <Card
+                      key={iconName}
+                      iconName={iconName}
+                      deleteds={deleteds}
+                      setDeleteds={setDeleteds}
+                      setFavorites={setFavorites}
+                      favorites={favorites}
+                    />
+                  ),
+              )
+            : iconsToShow.map(
+                (iconName) =>
+                  !favorites.includes(iconName) && (
+                    <Card
+                      key={iconName}
+                      iconName={iconName}
+                      deleteds={deleteds}
+                      setDeleteds={setDeleteds}
+                      setFavorites={setFavorites}
+                      favorites={favorites}
+                    />
+                  ),
+              )}
+        </Grid>
+        <Fab
+          color="primary"
+          aria-label="add"
+          className={classes.fab}
+          onClick={onToggle}
+        >
+          <Icon name="plus" />
+        </Fab>
+      </Paper>
+
+      <NewIconDialog
+        isOpen={isOpen}
+        onToggle={onToggle}
+        setAddeds={setAddeds}
+        addeds={addeds}
+      />
+    </>
   );
 };
 

@@ -33,11 +33,6 @@ const CardHeader: React.FC<CardHeaderProps> = ({
 
   return (
     <div className={classes.paperIconHeader}>
-      <Tooltip title="Options">
-        <IconButton>
-          <Icon name="chevronDown" />
-        </IconButton>
-      </Tooltip>
       <Tooltip title={deleteds.includes(iconName) ? 'Activate' : 'Deactivate'}>
         <IconButton onClick={() => handleDeleteIcon(iconName)}>
           <Icon name={deleteds.includes(iconName) ? 'moonNew' : 'close'} />

@@ -43,12 +43,12 @@ const Header: React.FC<HeaderProps> = ({ title, userName }) => {
           <>
             <Typography variant="h5">Log in</Typography>
             <Tooltip
-              title="Options"
+              title="login"
               className={classes.accountIcon}
               onClick={onToggle}
             >
               <IconButton>
-                <Icon name="accountCircle" fontSize="large" />
+                <Icon name="arrowRight" fontSize="large" />
               </IconButton>
             </Tooltip>
           </>

@@ -24,31 +24,42 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 ## Features
 
 - [x] Responsive Layout List
+- [x] Login Simulation
 - [x] Search Icon by Text
 - [x] Favorite Icon
+- [ ] Favorite Added Icon
 - [x] Delete Icon Card
-- [x] Show [On/Off] Deleteds Icons
-- [x] Show [On/Off] Favoriteds Icons
-- [ ] Icon Details Dialog
+- [x] Show [On/Off] Added Icons
+- [x] Show [On/Off] Favorited Icons
+- [x] Show [On/Off] Deleted Icons
 
 ## Layouts
 
 ### Initial layout
 
-![image](https://user-images.githubusercontent.com/20348582/90411563-f851da80-e079-11ea-8e25-376192184f1a.png)
+![image](https://user-images.githubusercontent.com/20348582/90432952-13801280-e099-11ea-9b60-9fa4897aeb01.png)
 
-### Search
+### Login
 
-![image](https://user-images.githubusercontent.com/20348582/90411669-191a3000-e07a-11ea-9eff-a989157cf1f9.png)
+![image](https://user-images.githubusercontent.com/20348582/90432924-082ce700-e099-11ea-96ad-ee005b4f97f3.png)
 
-### Responsive list
+### Search layout
 
-![image](https://user-images.githubusercontent.com/20348582/90411893-672f3380-e07a-11ea-9f69-3520af70f1e2.png)
+![image](https://user-images.githubusercontent.com/20348582/90432170-27774480-e098-11ea-8f3f-90aa5a407ddf.png)
 
-### Favoriteds
+### Adding Icon
 
-![image](https://user-images.githubusercontent.com/20348582/90411946-7a420380-e07a-11ea-9c7b-2eda8fba7630.png)
+![image](https://user-images.githubusercontent.com/20348582/90432264-483f9a00-e098-11ea-9f2c-3cd0d0c2aaab.png)
+![image](https://user-images.githubusercontent.com/20348582/90432314-568db600-e098-11ea-88a9-78052d88a7c9.png)
 
-### Icon Details
+### Responsive layout
 
-Not done yet.
+![image](https://user-images.githubusercontent.com/20348582/90432360-6907ef80-e098-11ea-9f21-b01d0c3077a4.png)
+
+### Favorite Icons
+
+![image](https://user-images.githubusercontent.com/20348582/90432452-8c329f00-e098-11ea-93c4-5bdc0512be33.png)
+
+### Filters
+
+![image](https://user-images.githubusercontent.com/20348582/90432531-aa989a80-e098-11ea-923d-0bcea5b498ac.png)

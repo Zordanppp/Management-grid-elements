@@ -13,6 +13,7 @@ import { useStyles } from './styles';
 import { CardProps } from './types';
 
 const Card: React.FC<CardProps> = ({
+  svg,
   iconName,
   deleteds,
   favorites,
@@ -33,6 +34,7 @@ const Card: React.FC<CardProps> = ({
           <Typography>{iconName}</Typography>
           <Icon
             name={iconName}
+            svg={svg}
             color="primary"
             fontSize="large"
             className={classes.icon}
