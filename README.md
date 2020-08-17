@@ -35,11 +35,11 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 
 ### Initial Screen
 
-![image](https://user-images.githubusercontent.com/20348582/90295673-97e35300-de57-11ea-8233-3b81489b19f7.png)
+![image](https://user-images.githubusercontent.com/20348582/90400040-da7c7980-e069-11ea-9ff5-bd0fae2e8f13.png)
 
 ### Search Result
 
-![image](https://user-images.githubusercontent.com/20348582/90295833-fb6d8080-de57-11ea-9dc7-74f19d60885c.png)
+![image](https://user-images.githubusercontent.com/20348582/90400067-e6683b80-e069-11ea-9711-be451c217538.png)
 
 ### Responsive List
 
@@ -48,7 +48,9 @@ Small Layout
 
 ### Favorites in the head list
 
-![image](https://user-images.githubusercontent.com/20348582/90297042-44730400-de5b-11ea-980b-9eb24cd8511f.png)
+![image](https://user-images.githubusercontent.com/20348582/90400118-faac3880-e069-11ea-9571-7adc655e84c2.png)
+
+![image](https://user-images.githubusercontent.com/20348582/90400100-f3852a80-e069-11ea-8fbc-0761e6c6e3aa.png)
 
 ### Icon Details
 
