@@ -2,6 +2,7 @@ import React, { useMemo, useState, useCallback } from 'react';
 
 import { useForm, Controller } from 'react-hook-form';
 
+import Fab from '@material-ui/core/Fab';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -52,7 +53,7 @@ const IconsCardsTable: React.FC = () => {
     [keys],
   );
 
-  const Filters = useMemo(
+  const FiltersRow = useMemo(
     () => (
       <Grid
         container
@@ -134,7 +135,7 @@ const IconsCardsTable: React.FC = () => {
   return (
     <Paper elevation={2} className={classes.container}>
       <Header title="Icons table" />
-      {Filters}
+      {FiltersRow}
       <Grid container className={classes.iconsBox}>
         {showFavoriteds &&
           favorites.map((iconName) => (
@@ -176,6 +177,9 @@ const IconsCardsTable: React.FC = () => {
                 ),
             )}
       </Grid>
+      <Fab color="primary" aria-label="add" className={classes.fab}>
+        <Icon name="plus" />
+      </Fab>
     </Paper>
   );
 };

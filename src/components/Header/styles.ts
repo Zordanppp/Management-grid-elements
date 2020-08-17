@@ -6,7 +6,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     minHeight: '12vh',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     paddingLeft: theme.spacing(2),
     background: theme.palette.primary.main,
   },
@@ -14,5 +14,18 @@ export const useStyles = makeStyles((theme: Theme) => ({
   title: {
     margin: theme.spacing(2),
     color: theme.palette.grey[100],
+  },
+
+  account: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    margin: theme.spacing(2),
+    color: theme.palette.grey[100],
+  },
+
+  accountIcon: {
+    color: theme.palette.grey[100],
+    margin: theme.spacing(1),
   },
 }));

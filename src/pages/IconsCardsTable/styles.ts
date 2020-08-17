@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     paddingBottom: theme.spacing(1),
     maxWidth: 1650,
-    minHeight: 720,
+    maxHeight: 720,
   },
 
   form: {
@@ -60,5 +60,11 @@ export const useStyles = makeStyles((theme: Theme) => ({
     overflowY: 'auto',
     paddingTop: theme.spacing(2),
     padding: theme.spacing(1),
+  },
+
+  fab: {
+    position: 'absolute',
+    bottom: theme.spacing(4),
+    left: '92%',
   },
 }));
