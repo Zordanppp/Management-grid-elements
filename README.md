@@ -27,8 +27,8 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 - [x] Search Icon by Text
 - [x] Favorite Icon
 - [x] Delete Icon Card
-- [x] Show On/Off Deleteds Icons
-- [x] Show On/Off Favoriteds Icons
+- [x] Show [On/Off] Deleteds Icons
+- [x] Show [On/Off] Favoriteds Icons
 - [ ] Icon Details Dialog
 
 ## Layouts
