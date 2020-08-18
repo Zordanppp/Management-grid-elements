@@ -29,6 +29,7 @@ I'm using the material-ui (https://material-ui.com) components and material desi
 - [x] Favorite Icon
 - [ ] Favorite Added Icon
 - [x] Delete Icon Card
+- [ ] Edit Icons
 - [x] Show [On/Off] Added Icons
 - [x] Show [On/Off] Favorited Icons
 - [x] Show [On/Off] Deleted Icons
